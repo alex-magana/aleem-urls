@@ -1,5 +1,5 @@
 name: "Clone URL Shortener Github Actions"
- 
+
 on:
   push:
 jobs:
@@ -11,3 +11,17 @@ jobs:
         with:
           repository: "limistah/url-shortner"
           ref: "master"
+      - name: "Create .netrc for Heroku Auth"
+        uses: bash
+        run: |
+          `cat > ~/.netrc <<EOF
+          machine api.heroku.com
+            login $EMAIL
+            password $HEROKU_AUTH_TOKEN
+          machine git.heroku.com
+            login $EMAIL
+            password $HEROKU_AUTH_TOKEN
+          EOF`
+        env:
+          EMAIL: gatobumalex@gmail.com 
+          HEROKU_AUTH_TOKEN: ${{ secrets.HEROKU_AUTH_TOKEN }}

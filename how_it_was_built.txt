@@ -23,4 +23,15 @@ Steps
 5. Push the changes to the remote branch
 6. Navigate to the Actions tab and execute the action.
 7. Rectify the repository naming
-    [link to commit]
+    https://github.com/alex-magana/aleem-urls/commit/66a699ec73d863653e096c427a830bad2f3ab587
+8. Install heroku CLI
+    brew tap heroku/brew && brew install heroku
+9. Log in to heroku
+    heroku login
+    This creates a .netrc file in ~/
+    Run cat ~/.netrc to view the file
+10. Obtain the heroku auth token
+    heroku auth:token
+11. Add the auth token to a secret on Github
+    https://github.com/alex-magana/aleem-urls/settings/secrets/actions/new
+12. Add a step to generate the .netrc file in the workflow
