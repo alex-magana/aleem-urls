@@ -6,8 +6,8 @@ jobs:
   deploy-url-shortener:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout limistah:url-shortener"
+      - name: "Checkout limistah:url-shortner"
         uses: actions/checkout@v1
         with:
-          repository: "limistah/url-shortener"
+          repository: "limistah/url-shortner"
           ref: "master"

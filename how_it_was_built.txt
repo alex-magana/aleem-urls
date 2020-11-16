@@ -19,4 +19,8 @@ Steps
     you intend to obtain the code from a separate repository.
     ref: the repository ref to use.
         (To do: Explore other forms of refs that can be used for this.)
+    https://github.com/alex-magana/aleem-urls/commit/15d048a7ca651645cc1272df4896ca6f450219f2
+5. Push the changes to the remote branch
+6. Navigate to the Actions tab and execute the action.
+7. Rectify the repository naming
     [link to commit]
