@@ -1,0 +1,22 @@
+Building a Demo API using Postgres, Node, Express
+
+Steps
+1. mkdir -p .github/workflows
+2. touch .github/workflows/action.yml
+3. Define the action
+    ln1 is the name of the workflow.
+    ln3 specifies the event that should trigger th workflow
+    ln5 describes the pipeline or the activities that are executed in the
+    as part of this workflow
+    ln6 is the name of the job
+    ln7 describes the runner that is to be used for the job
+    ln8-ln13 -> steps: declaration of the steps to be executed in the job
+    name: identifier of the step
+    uses: specifies the action to be executed. This can be a command or the
+    name of an actions published and shared via the marketplace/community
+    with: the arguments to use when running the action defined in "uses"
+    repository: the repository to obtain the code from. This is utilized in a case where
+    you intend to obtain the code from a separate repository.
+    ref: the repository ref to use.
+        (To do: Explore other forms of refs that can be used for this.)
+    [link to commit]
