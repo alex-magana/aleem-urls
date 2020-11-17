@@ -12,7 +12,7 @@ jobs:
           repository: "limistah/url-shortner"
           ref: "master"
       - name: "Create .netrc for Heroku Auth"
-        uses: bash
+        shell: bash
         run: |
           `cat > ~/.netrc <<EOF
           machine api.heroku.com
@@ -25,3 +25,8 @@ jobs:
         env:
           EMAIL: gatobumalex@gmail.com 
           HEROKU_AUTH_TOKEN: ${{ secrets.HEROKU_AUTH_TOKEN }}
+      - name: "Add remote"
+        shell: bash
+        run: |
+          heroku git:remote --app aleem-urls-via-github-actions
+        

@@ -35,3 +35,6 @@ Steps
 11. Add the auth token to a secret on Github
     https://github.com/alex-magana/aleem-urls/settings/secrets/actions/new
 12. Add a step to generate the .netrc file in the workflow
+    [link to commit]
+13. Add the remote config for heroku app'
+    [link to commit]
