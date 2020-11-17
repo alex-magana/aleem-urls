@@ -29,4 +29,7 @@ jobs:
         shell: bash
         run: |
           heroku git:remote --app aleem-urls-via-github-actions
-        
+      - name: "Push to heroku"
+        shell: bash
+        run: |
+          git push heroku HEAD:master
