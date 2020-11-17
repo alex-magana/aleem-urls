@@ -32,4 +32,4 @@ jobs:
       - name: "Push to heroku"
         shell: bash
         run: |
-          cd ../url-shortner && git push heroku HEAD:master
+          cd ../url-shortner && git push heroku HEAD:refs/heads/master
