@@ -28,7 +28,7 @@ jobs:
       - name: "Add remote"
         shell: bash
         run: |
-          heroku git:remote -a aleem-urls-via-github-actions
+          heroku --version
       - name: "Push to heroku"
         shell: bash
         run: |
