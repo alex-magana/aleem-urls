@@ -19,7 +19,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
           heroku_app_name: "aleem-urls-via-github-actions"
           heroku_email: "gatobumalex@gmail.com"
-        working-directory: /home/runner/work/aleem-urls/url-shortner
+          appdir: "url-shortner"
       - name: "Add remote"
         shell: bash
         run: |

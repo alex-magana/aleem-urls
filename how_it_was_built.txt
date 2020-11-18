@@ -72,6 +72,10 @@ Steps
           heroku_email: "gatobumalex@gmail.com" # The email address for the target heroku account
     [link to commit]
 18. Specify the workspace directory
-    - Use the workspace-directory key under jobs.<job_id>.steps to specify the
+    - Use the working-directory key under jobs.<job_id>.steps to specify the
     directory form where the action should be executed
       working-directory: ./temp
+    [link to commit]
+19. working-directory is not supported for steps that use the "uses" attribute
+    Use the appdir documented in https://github.com/AkhileshNS/heroku-deploy#deploy-subdirectory
+    [link to commit]
