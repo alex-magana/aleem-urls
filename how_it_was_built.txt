@@ -83,3 +83,5 @@ Steps
     [link to commit]
 21. Restore manual steps
     [link to commit]
+22. Use working-directory for the manual deployment
+    [link to commit]

@@ -38,10 +38,12 @@ jobs:
           EMAIL: gatobumalex@gmail.com 
           HEROKU_AUTH_TOKEN: ${{ secrets.HEROKU_AUTH_TOKEN }}
       - name: "Add remote"
+        working-directory: url-shortner
         shell: bash
         run: |
-          cd url-shortner && heroku git:remote -a aleem-urls-via-github-actions
+          heroku git:remote -a aleem-urls-via-github-actions
       - name: "Push to heroku"
+        working-directory: url-shortner
         shell: bash
         run: |
-          cd url-shortner && git push heroku HEAD:refs/heads/master
+          git push heroku HEAD:refs/heads/master
