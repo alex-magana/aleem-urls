@@ -40,3 +40,34 @@ Steps
     [link to commit]
 14. Add the action to push the branch to heroku
     [link to commit]
+15. Navigate to https://aleem-urls-via-github-actions.herokuapp.com
+    The response below should be visible on the page
+        {
+            status: "Online",
+            date: "2020-11-17T05:12:37.550Z"
+        }
+16. Deploy the application using a cron job scheduler
+    - The cron schedule format takes the format
+    "* * * * *", with the asterisks representing the following from left to right
+    * - minutes (0 - 59)
+    * - hour (0 - 23)
+    * - day of the month (1 - 31)
+    * - month (1 - 12 or JAN - DEC)
+    * - day of the week (0 - 6 or SUN - SAT)
+    - E.g "0 0 * * *" -> This instructs Github Actions to run every day at 00:00 hrs
+    - Fractions of a unit can be used to specify the frequency of repetition
+    - E.g "0 0 */1 * *" -> Run at 00:00 on every day of the month
+        "0 0 */2 * *" -> Run at 00:00 on every 2nd day of the month
+        "*/10 * * * *" -> Run at every 10th minute
+    https://crontab.guru/#0_0_*_*/1_*
+    https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#scheduled-events
+    [link to commit]
+17. Using a marketplace action
+    Replace the "Create .netrc for Heroku Auth" with the following text
+    - name: "Create .netrc for Heroku Auth"
+        uses: akhileshns/heroku-deploy@v3.5.7 # The action imported from the marketplace
+        with: # The flag used to pass arguments to the imported action
+          heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}} # The auth token generated via "heroku log in"
+          heroku_app_name: "aleem-urls-via-github-actions" # The name of the app in heroku
+          heroku_email: "gatobumalex@gmail.com" # The email address for the target heroku account
+    [link to commit]
