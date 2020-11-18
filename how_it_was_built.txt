@@ -71,3 +71,7 @@ Steps
           heroku_app_name: "aleem-urls-via-github-actions" # The name of the app in heroku
           heroku_email: "gatobumalex@gmail.com" # The email address for the target heroku account
     [link to commit]
+18. Specify the workspace directory
+    - Use the workspace-directory key under jobs.<job_id>.steps to specify the
+    directory form where the action should be executed
+      working-directory: ./temp
