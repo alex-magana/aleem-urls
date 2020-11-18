@@ -11,6 +11,7 @@ jobs:
       - name: "Checkout limistah:url-shortner"
         uses: actions/checkout@v1
         with:
+          path: "url-shortner"
           repository: "limistah/url-shortner"
           ref: "master"
       - name: "Create .netrc for Heroku Auth"
