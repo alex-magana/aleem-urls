@@ -35,7 +35,7 @@ Steps
 11. Add the auth token to a secret on Github
     https://github.com/alex-magana/aleem-urls/settings/secrets/actions/new
 12. Add a step to generate the .netrc file in the workflow
-    [link to commit]
+    https://github.com/alex-magana/aleem-urls/commit/321873a9a5e712b848ac21949caebb3c2b352b78
 13. Add the remote config for heroku app
     [link to commit]
 14. Add the action to push the branch to heroku
@@ -78,4 +78,6 @@ Steps
     [link to commit]
 19. working-directory is not supported for steps that use the "uses" attribute
     Use the appdir documented in https://github.com/AkhileshNS/heroku-deploy#deploy-subdirectory
+    [link to commit]
+20. Add the path to checkout the application to.
     [link to commit]

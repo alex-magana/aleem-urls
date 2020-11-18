@@ -8,23 +8,28 @@ jobs:
   deploy-url-shortener:
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout alex-magana:aleem-urls"
+        uses: actions/checkout@v2
+        with:
+          repository: "alex-magana/aleem-urls"
+          ref: "main"
       - name: "Checkout limistah:url-shortner"
         uses: actions/checkout@v2
         with:
           path: "./url-shortner"
           repository: "limistah/url-shortner"
           ref: "master"
-      # - name: "Create .netrc for Heroku Auth"
-      #   uses: akhileshns/heroku-deploy@v3.5.7
-      #   with:
-      #     heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
-      #     heroku_app_name: "aleem-urls-via-github-actions"
-      #     heroku_email: "gatobumalex@gmail.com"
-      #     appdir: "url-shortner"
       - name: "Check app"
         shell: bash
         run: |
-          ls -al & cd .. && ls -al
+          ls -al && ls -al url-shortner && cd .. && ls -al
+      - name: "Create .netrc for Heroku Auth"
+        uses: akhileshns/heroku-deploy@v3.6.8
+        with:
+          heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
+          heroku_app_name: "aleem-urls-via-github-actions"
+          heroku_email: "gatobumalex@gmail.com"
+          appdir: "url-shortner"
       - name: "Add remote"
         shell: bash
         run: |
