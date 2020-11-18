@@ -35,11 +35,11 @@ jobs:
           heroku_app_name: "aleem-urls-via-github-actions"
           heroku_email: "gatobumalex@gmail.com"
           appdir: "url-shortner"
-      - name: "Add remote"
-        shell: bash
-        run: |
-          cd ../url-shortner && heroku git:remote -a aleem-urls-via-github-actions
-      - name: "Push to heroku"
-        shell: bash
-        run: |
-          cd ../url-shortner && git push heroku HEAD:refs/heads/master
+      # - name: "Add remote"
+      #   shell: bash
+      #   run: |
+      #     cd url-shortner && heroku git:remote -a aleem-urls-via-github-actions
+      # - name: "Push to heroku"
+      #   shell: bash
+      #   run: |
+      #     cd url-shortner && git push heroku HEAD:refs/heads/master
