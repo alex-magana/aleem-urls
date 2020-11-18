@@ -9,18 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout limistah:url-shortner"
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          path: "url-shortner"
+          path: "./url-shortner"
           repository: "limistah/url-shortner"
           ref: "master"
-      - name: "Create .netrc for Heroku Auth"
-        uses: akhileshns/heroku-deploy@v3.5.7
-        with:
-          heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
-          heroku_app_name: "aleem-urls-via-github-actions"
-          heroku_email: "gatobumalex@gmail.com"
-          appdir: "url-shortner"
+      # - name: "Create .netrc for Heroku Auth"
+      #   uses: akhileshns/heroku-deploy@v3.5.7
+      #   with:
+      #     heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
+      #     heroku_app_name: "aleem-urls-via-github-actions"
+      #     heroku_email: "gatobumalex@gmail.com"
+      #     appdir: "url-shortner"
+      - name: "Check app"
+        shell: bash
+        run: |
+          ls -al & cd .. && ls -al
       - name: "Add remote"
         shell: bash
         run: |
