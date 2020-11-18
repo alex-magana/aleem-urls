@@ -81,3 +81,7 @@ Steps
     [link to commit]
 20. Add the path to checkout the application to.
     [link to commit]
+
+heroku.appdir = heroku.appdir[0] === "." && heroku.appdir[1] === "/" ? heroku.appdir.slice(2) : heroku.appdir[0] === "/"
+      ? heroku.appdir.slice(1)
+      : heroku.appdir;
